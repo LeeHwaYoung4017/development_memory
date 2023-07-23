@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/media.css}">
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+</head>
+<body>
+
+<div class="board_wrap">
+    <div class="board_title">
+        <strong>포트폴리오 추가하기</strong>
+        <p>포트폴리오를 정보에 맞춰 기입해주세요.</p>
+    </div>
+
+    <div class="board_list_wrap">
+        <div class="board_list">
+            <div class="top">
+                <div class="insert_form">
+                    <form method="post">
+
+                        <table>
+                            <tr>
+                                <td class="insert_title">제목</td>
+                                <td><input type="text" class="insert_text_width" name="title" id="title"></td>
+                            </tr>
+                            <tr>
+                                <td class="insert_title">시작일</td>
+                                <td><input type="date" name="start_date" id="start_date"></td>
+                                <td class="insert_title">종료일</td>
+                                <td><input type="date" name="end_date" id="end_date"></td>
+                            </tr>
+                            <tr>
+                                <td class="insert_title">링크</td>
+                                <td><input type="text" class="insert_text_width" name="github_link" id="github_link"></td>
+                            </tr>
+                            <tr>
+                                <td class="insert_title">설명</td>
+                                <td><textarea name="content" id="content"></textarea></td>
+                            </tr>
+                            <input type="button" onclick="save_portfolio">
+                        </table>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+<script>
+    function save_portfolio() {
+        var title = document.getElementById("title").value();
+        var start_date = document.getElementById("start_date").value();
+        var end_date = document.getElementById("end_date").value();
+        var content = document.getElementById("content").value();
+        var github_link = document.getElementById("github_link").value();
+
+        if(title == "") {
+            alert("제목을 입력하세요");
+            return false;
+        }
+        if(start_date == "") {
+            alert("시작날짜를 입력하세요.");
+            return false;
+        }
+        if(end_date == "") {
+            alert("종료날짜를 입력하세요.");
+            return false;
+        }
+        if(content == "") {
+            alert("내용을 입력하세요");
+            return false;
+        }
+
+        console.log(title + " / " + start_date + " / " + end_date + " / " + content + " / " + github_link);
+
+        window.location.href = 'saveInsert';
+    }
+
+</script>
