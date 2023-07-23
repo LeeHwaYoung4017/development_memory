@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper>
+<mapper namespace="com.example.development_memory.mapper.PortfolioMapper">
+
+    <!-- 게시글 등록 -->
+    <insert id="saveInsert">
+        insert into PORTFOLIO (title,
+                              start_date,
+                              end_date,
+                              github_link,
+                              content)
+        values (#{title},
+                #{start_date},
+                #{end_date},
+                #{github_link},
+                #{content}
+               )
+    </insert>
 
 </mapper>

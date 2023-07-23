@@ -1,0 +1,11 @@
+CREATE TABLE `portfolio` (
+	`num` INT NOT NULL AUTO_INCREMENT,
+	`title` VARCHAR(50) NOT NULL DEFAULT '',
+	`start_date` DATE NOT NULL,
+	`end_date` DATE NOT NULL,
+	`github_link` VARCHAR(250) NOT NULL DEFAULT '',
+	`count` INT NOT NULL DEFAULT 0,
+	PRIMARY KEY (`num`) USING BTREE
+)
+COLLATE='utf8mb4_general_ci'
+;
