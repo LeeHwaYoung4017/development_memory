@@ -28,13 +28,13 @@
             </div>
 
             <!-- 데이터 내 게시판 출력 영역 -->
-            <div class="list_event">
-                <div class="num">1</div>
-                <div class="title">제목글</div>
-                <div class="start_date">2023.07.16</div>
-                <div class="end_date">2023.07.20</div>
-                <div class="github_link">바로가기</div>
-                <div class="count">3</div>
+            <div class="list_event" th:each="portfolio : ${portfolio}">
+                <div class="num"><a th:text="${portfolio.num}"></a></div>
+                <div class="title"><a th:text="${portfolio.title}"></a></div>
+                <div class="start_date"><a th:text="${portfolio.startDate}"></a></div>
+                <div class="end_date"><a th:text="${portfolio.endDate}"></a></div>
+                <div class="github_link"><a th:href="${portfolio.githubLink}">바로가기</a></div>
+                <div class="count"><a th:text="${portfolio.count}"></a></div>
             </div>
 
             <!-- 페이징 영역 -->

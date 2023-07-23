@@ -5,16 +5,22 @@
     <!-- 게시글 등록 -->
     <insert id="saveInsert">
         insert into PORTFOLIO (title,
-                              start_date,
-                              end_date,
-                              github_link,
+                              startDate,
+                              endDate,
+                              githubLink,
                               content)
         values (#{title},
-                #{start_date},
-                #{end_date},
-                #{github_link},
+                #{startDate},
+                #{endDate},
+                #{githubLink},
                 #{content}
                )
     </insert>
+
+    <select id="portfolioList">
+        select *
+        from PORTFOLIO
+        ORDER BY num DESC;
+    </select>
 
 </mapper>

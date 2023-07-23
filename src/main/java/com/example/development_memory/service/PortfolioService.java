@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class PortfolioService {
 
@@ -15,6 +17,10 @@ public class PortfolioService {
     @Transactional
     public void saveInsert(PortfolioDTO portfolioDTO) {
         portfolioMapper.saveInsert(portfolioDTO);
+    }
+
+    public List<PortfolioDTO> portfolioList() {
+        return portfolioMapper.portfolioList();
     }
 
 }

@@ -5,6 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-
+    <footer th:fragment="nav">
+        <div class="nav">
+            <ul class="navBar">
+                <li onclick="move('Home')">Home</li>
+                <li onclick="move('Skill')">Skill</li>
+                <li onclick="move('Project')">Project</li>
+                <li onclick="move('Contact')">Contact</li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+    function move(idx) {
+        var offset = $("#"+idx).offset();
+        $('html, body').animate({scrollTop : offset.top}, 400);
+    }
+</script>

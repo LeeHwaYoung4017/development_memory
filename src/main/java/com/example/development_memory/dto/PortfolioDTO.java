@@ -6,9 +6,9 @@ public class PortfolioDTO {
 
     private int num;
     private String title;
-    private String start_date;
-    private String end_date;
-    private String github_link;
+    private String startDate;
+    private String endDate;
+    private String githubLink;
     private String content;
     private String count;
 

@@ -3,10 +3,10 @@ package com.example.development_memory.controller;
 import com.example.development_memory.dto.PortfolioDTO;
 import com.example.development_memory.service.PortfolioService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class HomeController {
@@ -22,8 +22,13 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping("/list")
-    public String list(){
+    @GetMapping("/list")
+    public String list(Model model){
+        List<PortfolioDTO> portfolio = portfolioService.portfolioList();
+        model.addAttribute("portfolio", portfolio);
+
+        System.out.println(portfolio);
+
         return "list";
     }
 
@@ -38,5 +43,6 @@ public class HomeController {
 
         return "redirect:list";
     }
+
 
 }

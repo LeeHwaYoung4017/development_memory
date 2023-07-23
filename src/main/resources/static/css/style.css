@@ -329,4 +329,45 @@ date {
 
 .list_event:hover {
 	background-color: lightblue;
+	cursor: pointer;
+	transform: scale(1.01);
+	transition-duration: 0.2s;
+}
+
+.nav {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	height: 4%;
+	z-index: 10;
+}
+.navBar{
+	width: 20em;
+	height: 2em;
+	margin: 0;
+	float: right;
+	margin-right: 2%;
+	list-style: none;
+	z-index: 9999;
+	color: gray;
+	background-color: silver;
+	border-radius: 2px 2px 30px 30px;
+}
+.navBar li {
+	float: left;
+	padding-top: 0.5%;
+	padding-right: 7%;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: 1em;
+	text-align: center;
+	left: 0;
+	top: 0;
+}
+.navBar li:hover {
+	color: black;
+	-ms-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	transition: all 0.3s ease-in-out;
 }
