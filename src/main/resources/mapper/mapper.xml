@@ -23,4 +23,16 @@
         ORDER BY num DESC;
     </select>
 
+    <select id="readView">
+        select *
+        from PORTFOLIO
+        where NUM = #{num}
+    </select>
+
+    <update id="readCountUp">
+        update PORTFOLIO
+        set count = count+1
+        where num = #{num}
+    </update>
+
 </mapper>

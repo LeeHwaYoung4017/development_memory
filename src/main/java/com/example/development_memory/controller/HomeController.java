@@ -23,7 +23,7 @@ public class HomeController {
     }
 
     @GetMapping("/list")
-    public String list(Model model){
+    public String list(Model model) {
         List<PortfolioDTO> portfolio = portfolioService.portfolioList();
         model.addAttribute("portfolio", portfolio);
 
@@ -42,6 +42,15 @@ public class HomeController {
         portfolioService.saveInsert(portfolioDTO);
 
         return "redirect:list";
+    }
+
+    @GetMapping("/view/{num}")
+    public String view(Model model, @PathVariable("num") String num) {
+        PortfolioDTO portfolioDTO = portfolioService.readView(num);
+        portfolioService.readCountUp(num);
+        model.addAttribute("portfolio",portfolioDTO);
+
+        return "view";
     }
 
 

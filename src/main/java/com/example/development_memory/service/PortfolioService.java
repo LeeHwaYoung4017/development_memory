@@ -23,4 +23,8 @@ public class PortfolioService {
         return portfolioMapper.portfolioList();
     }
 
+    public PortfolioDTO readView(String num) { return portfolioMapper.readView(num); }
+
+    public void readCountUp(String num) { portfolioMapper.readCountUp(num);}
+
 }

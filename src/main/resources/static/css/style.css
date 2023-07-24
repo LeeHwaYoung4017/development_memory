@@ -344,7 +344,7 @@ date {
 }
 .navBar{
 	width: 20em;
-	height: 2em;
+	height: 4em;
 	margin: 0;
 	float: right;
 	margin-right: 2%;
@@ -356,10 +356,10 @@ date {
 }
 .navBar li {
 	float: left;
-	padding-top: 0.5%;
-	padding-right: 7%;
+	padding-top: 4%;
+	padding-right: 5%;
 	font-family: 'Noto Sans JP', sans-serif;
-	font-size: 1em;
+	font-size: 1.5em;
 	text-align: center;
 	left: 0;
 	top: 0;

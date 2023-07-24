@@ -11,4 +11,8 @@ public interface PortfolioMapper {
 
     List<PortfolioDTO> portfolioList();
 
+    PortfolioDTO readView(String num);
+
+    void readCountUp(String num);
+
 }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/media.css}">
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+</head>
+<body>
+
+<div th:replace="fragments/nav::nav"></div>
+
+<div class="board_wrap">
+    <div class="board_title">
+        <strong>포트폴리오</strong>
+        <p>포트폴리오 상세 정보 입니다.</p>
+    </div>
+
+    <div class="board_list_wrap">
+        <div class="board_list">
+            <div class="top">
+                <div class="insert_form">
+                    <table>
+                        <tr>
+                            <td class="insert_title">제목</td>
+                            <td><p th:text="${portfolio.title}"></p></td>
+                        </tr>
+                        <tr>
+                            <td class="insert_title">작업기간</td>
+                            <td><p th:text="${portfolio.startDate}+' ~ '+${portfolio.endDate}"></p></td>
+                        </tr>
+                        <tr>
+                            <td class="insert_title">링크</td>
+                            <td><a th:href="${portfolio.githubLink}" th:text="${portfolio.githubLink}"></a></td>
+                        </tr>
+                        <tr>
+                            <td class="insert_title">상세설명</td>
+                            <td><p th:text="${portfolio.content}"></p></td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                            <td>
+                                <button onclick="history.back()">뒤로가기</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
