@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8">
-    <title>Insert</title>
+    <title>Update</title>
 
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/media.css}">
@@ -16,7 +16,7 @@
 
 <div class="board_wrap">
     <div class="board_title">
-        <strong>포트폴리오 추가하기</strong>
+        <strong>포트폴리오 수정하기</strong>
         <p>포트폴리오를 정보에 맞춰 기입해주세요.</p>
     </div>
 
@@ -24,26 +24,25 @@
         <div class="board_list">
             <div class="top">
                 <div class="insert_form">
-                    <form action="saveInsert" method="post">
-
+                    <form action="updateSuccess" method="post">
                         <table>
                             <tr>
                                 <td class="insert_title">제목</td>
-                                <td><input type="text" class="insert_text_width" name="title" id="title"></td>
+                                <td><input type="text" class="insert_text_width" name="title" id="title" th:value="${portfolioDTO.title}"></td>
                             </tr>
                             <tr>
                                 <td class="insert_title">시작일</td>
-                                <td><input type="date" name="startDate" id="startDate"></td>
+                                <td><input type="date" name="startDate" id="startDate" th:value="${portfolioDTO.startDate}"></td>
                                 <td class="insert_title">종료일</td>
-                                <td><input type="date" name="endDate" id="endDate"></td>
+                                <td><input type="date" name="endDate" id="endDate" th:value="${portfolioDTO.endDate}"></td>
                             </tr>
                             <tr>
                                 <td class="insert_title">링크</td>
-                                <td><input type="text" class="insert_text_width" name="githubLink" id="githubLink"></td>
+                                <td><input type="text" class="insert_text_width" name="githubLink" id="githubLink" th:value="${portfolioDTO.githubLink}"></td>
                             </tr>
                             <tr>
                                 <td class="insert_title">설명</td>
-                                <td><textarea name="content" id="content"></textarea></td>
+                                <td><textarea name="content" id="content" th:text="${portfolioDTO.content}"></textarea></td>
                             </tr>
                             <tr>
                                 <td>
@@ -52,7 +51,6 @@
                                 </td>
                             </tr>
                         </table>
-
                     </form>
                 </div>
             </div>

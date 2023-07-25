@@ -45,6 +45,8 @@
                         <tr>
                             <td>
                                 <button onclick="history.back()">뒤로가기</button>
+                                <button><a th:href="'../update/' + ${portfolio.num}">수정</a></button>
+                                <button><a th:href="'../delete/' + ${portfolio.num}">삭제</a></button>
                             </td>
                         </tr>
                     </table>

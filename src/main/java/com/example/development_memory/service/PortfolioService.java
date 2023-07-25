@@ -27,4 +27,7 @@ public class PortfolioService {
 
     public void readCountUp(String num) { portfolioMapper.readCountUp(num);}
 
+    public void deletePortfolio(String num) { portfolioMapper.deletePortfolio(num); }
+
+
 }

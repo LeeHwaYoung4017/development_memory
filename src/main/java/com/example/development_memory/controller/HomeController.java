@@ -53,5 +53,22 @@ public class HomeController {
         return "view";
     }
 
+    @RequestMapping("/delete/{num}")
+    public String delete(@PathVariable("num") String num, Model model) {
+        portfolioService.deletePortfolio(num);
 
+        List<PortfolioDTO> portfolio = portfolioService.portfolioList();
+        model.addAttribute("portfolio", portfolio);
+
+        return "redirect:../list";
+    }
+
+    @RequestMapping("/update/{num}")
+    public String update(@PathVariable("num") String num, Model model) {
+
+        PortfolioDTO portfolioDTO = portfolioService.readView(num);
+        model.addAttribute("portfolioDTO", portfolioDTO);
+
+        return "update";
+    }
 }

@@ -35,4 +35,10 @@
         where num = #{num}
     </update>
 
+    <delete id="deletePortfolio">
+        delete
+        from PORTFOLIO
+        where num = #{num}
+    </delete>
+
 </mapper>

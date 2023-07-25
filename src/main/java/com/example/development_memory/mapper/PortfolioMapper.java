@@ -15,4 +15,7 @@ public interface PortfolioMapper {
 
     void readCountUp(String num);
 
+    void deletePortfolio(String num);
+
+
 }
