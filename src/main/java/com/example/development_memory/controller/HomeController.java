@@ -71,4 +71,11 @@ public class HomeController {
 
         return "update";
     }
+
+    @PostMapping("/updateSuccess")
+    public String updateSuccess(@ModelAttribute PortfolioDTO portfolioDTO){
+        portfolioService.updateSuccess(portfolioDTO);
+
+        return "redirect:list";
+    }
 }

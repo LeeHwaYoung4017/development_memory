@@ -17,5 +17,6 @@ public interface PortfolioMapper {
 
     void deletePortfolio(String num);
 
+    void updateSuccess(PortfolioDTO portfolioDTO);
 
 }

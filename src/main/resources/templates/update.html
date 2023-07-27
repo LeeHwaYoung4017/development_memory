@@ -24,8 +24,9 @@
         <div class="board_list">
             <div class="top">
                 <div class="insert_form">
-                    <form action="updateSuccess" method="post">
+                    <form action="../updateSuccess" method="post">
                         <table>
+                            <input type="hidden" name="num" id="num" th:value="${portfolioDTO.num}">
                             <tr>
                                 <td class="insert_title">제목</td>
                                 <td><input type="text" class="insert_text_width" name="title" id="title" th:value="${portfolioDTO.title}"></td>

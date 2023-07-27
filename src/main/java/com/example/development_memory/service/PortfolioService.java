@@ -29,5 +29,7 @@ public class PortfolioService {
 
     public void deletePortfolio(String num) { portfolioMapper.deletePortfolio(num); }
 
+    public void updateSuccess(PortfolioDTO portfolioDTO) { portfolioMapper.updateSuccess(portfolioDTO); };
+
 
 }
